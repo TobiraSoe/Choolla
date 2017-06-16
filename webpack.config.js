@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackDashBoard = require('webpack-dashboard');
 
 
 module.exports = env => {
@@ -13,7 +14,7 @@ module.exports = env => {
 }
 
 
-DEV = {
+const DEV = {
     entry: './src/App.jsx',
 
     output: {
@@ -32,7 +33,17 @@ DEV = {
             },
             {
                 test: /\.styl$/,
-                use: [ 'style-loader', 'css-loader', 'stylus-loader']
+                use: [
+                    'style-loader',
+                    { 
+                        loader: 'css-loader', 
+                        options: {
+                            modules: true,
+                            localIdentName: '[local]--[hash:base64:5]--[name]'
+                        } 
+                    },
+                    'stylus-loader'
+                ]
             }
         ]
     },

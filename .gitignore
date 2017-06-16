@@ -39,6 +39,7 @@ jspm_packages
 # VS Code
 .vscode
 
+#Web Storm
 .idea/
 
 # Windows Installer files
@@ -49,3 +50,5 @@ jspm_packages
 
 # Windows shortcuts
 *.lnk
+
+public/

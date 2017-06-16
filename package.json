@@ -6,8 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --env development",
-    "prod": "webpack --env production",
-    "test": "webpack-dev-server"
+    "prod": "webpack --env production"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -22,6 +21,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "^2.6.1",
+    "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
