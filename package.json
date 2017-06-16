@@ -1,0 +1,7 @@
+{
+  "name": "wp-temp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tobira <tobirawork@gmail.com>",
+  "license": "MIT"
+}
