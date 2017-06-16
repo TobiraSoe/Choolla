@@ -1,9 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 
+let entryPoint = 'app.jsx';
+
 const DEV = {
     entry: [
-        './src/entry',
+        `./src/${entryPoint}`,
         // the entry point of app
     ],
 
@@ -13,7 +15,7 @@ const DEV = {
 
         path: path.resolve(__dirname, 'public'),
 
-        publicPath: '/'
+        publicPath: '/public/'
         // necessary for HMR to know where to load the hot update chunks
     },
 
@@ -47,7 +49,7 @@ const DEV = {
         host: 'localhost',
         port: 3000,
         contentBase: path.join(__dirname, 'public'),
-        historyApiFallback: true,
+        //historyApiFallback: true,
         // respond to 404s with index.html
 
         hot: true,
@@ -56,14 +58,14 @@ const DEV = {
 };
 
 const PROD = {
-    entry: './src/intro',
+    entry: `./src/${entryPoint}`,
 
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public')
     },
 
-    //devtool: 'source-map',
+    devtool: 'source-map',
 
     module: {
         rules: [
@@ -78,10 +80,10 @@ const PROD = {
     },
 
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            comments: false
-        })
+        new webpack.optimize.UglifyJsPlugin(),
+        
+        new webpack.NoEmitOnErrorsPlugin(),
+
     ]
 };
 
