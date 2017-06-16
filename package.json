@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Tobira <tobirawork@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+    "scripts": {
+    "dev": "webpack-dev-server --env development",
+    "prod": "webpack --env production"
+  }
 }
