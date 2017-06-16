@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends Component {
+import Header from './components/header/header.jsx'
+
+class App extends React.Component {
     render() {
         return (
-            <h1>loasdlasodfalsdfasdf</h1>
+            <div>
+                <h1>app Component</h1>
+
+                <Header />
+            </div>
         )
     }
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+console.log('as;dlkasldkfas');

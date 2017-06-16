@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --env development",
-    "prod": "webpack --env production"
+    "prod": "webpack --env production",
+    "test": "webpack-dev-server"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
