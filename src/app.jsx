@@ -1,5 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 
 import Header from './components/header/header.jsx'
 
@@ -8,13 +9,9 @@ class App extends React.Component {
         return (
             <div>
                 <h1>app Component</h1>
-
-                <Header />
             </div>
         )
     }
-};
+}
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-console.log('as;dlkasldkfas');
+ReactDOM.render(<App />, document.getElementById('root'))
