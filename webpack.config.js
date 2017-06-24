@@ -77,4 +77,4 @@ const DEV = {
 
         new webpack.HotModuleReplacementPlugin()
     ]
-};
+}
