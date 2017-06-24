@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 
 module.exports = env => {
@@ -42,7 +43,16 @@ const DEV = {
                             localIdentName: '[name]--[hash:base64:5]'
                         }
                     },
-                    //'postcss-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: () => {
+                                return [
+                                    autoprefixer('last 2 versions', 'ie 10'),
+                                ]
+                            }
+                        }
+                    },
                     'stylus-loader'
                 ]
             },
@@ -76,7 +86,7 @@ const DEV = {
             template: './src/App.html'
         }),
 
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ]
 };
 
@@ -103,7 +113,16 @@ const PROD = {
                     fallback: 'style-loader',
                     use: [
                         'css-loader',
-                        //'postcss-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: () => {
+                                    return [
+                                        autoprefixer('last 2 versions', 'ie 10')
+                                    ]
+                                }
+                            }
+                        },
                         'stylus-loader',
                     ],
                 }),
@@ -130,6 +149,15 @@ const PROD = {
         }),
 
         new webpack.optimize.UglifyJsPlugin(),
-        new ExtractTextPlugin('application.css')
+
+        new ExtractTextPlugin('application.css'),
+
+        // new webpack.LoaderOptionsPlugin({
+        //     options: {
+        //         postcss: [
+        //             autoprefixer(),
+        //         ]
+        //     }
+        // })
     ]
-}
+};
