@@ -3,16 +3,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-
-
-module.exports = env => {
-    if (env === 'production') {
-        return PROD;
-    }
-    if (env === 'development') {
-        return DEV;
-    }
-}
+const cssnext = require("postcss-cssnext");
+const fontMagician = require('postcss-font-magician');
+const cssNano = require('cssnano');
 
 
 const DEV = {
@@ -49,6 +42,8 @@ const DEV = {
                             plugins: () => {
                                 return [
                                     autoprefixer('last 2 versions', 'ie 10'),
+                                    cssnext(),
+                                    fontMagician()
                                 ]
                             }
                         }
@@ -118,7 +113,10 @@ const PROD = {
                             options: {
                                 plugins: () => {
                                     return [
-                                        autoprefixer('last 2 versions', 'ie 10')
+                                        autoprefixer('last 2 versions', 'ie 10'),
+                                        //cssnext(),
+                                        fontMagician(),
+                                        cssNano()
                                     ]
                                 }
                             }
@@ -160,4 +158,13 @@ const PROD = {
         //     }
         // })
     ]
+};
+
+module.exports = env => {
+    if (env === 'production') {
+        return PROD;
+    }
+    if (env === 'development') {
+        return DEV;
+    }
 };
