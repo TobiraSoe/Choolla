@@ -1,4 +1,4 @@
-# My boilerplate "" for front-end development
+# My boilerplate "Choolla" for front-end development
 
 >In **src/** folder you have 3 main files with same name - App. *App.html* is your template, bundled *js* and *css* will import by own. *App.jsx* is main file(component), also i recomend you create a **src/components/** folder for comfortable work with components in your app.
 
