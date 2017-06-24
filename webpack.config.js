@@ -73,7 +73,7 @@ const DEV = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/app.html'
+            template: './src/App.html'
         }),
 
         new webpack.HotModuleReplacementPlugin()
@@ -119,8 +119,6 @@ const PROD = {
         ]
     },
 
-    devtool: 'sourse-map',
-
     resolve: {
         extensions: ['.js', '.jsx', '.json', '*']
     },
@@ -128,7 +126,7 @@ const PROD = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/app.html'
+            template: './src/App.html'
         }),
 
         new webpack.optimize.UglifyJsPlugin(),
