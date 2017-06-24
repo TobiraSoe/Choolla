@@ -1,12 +1,18 @@
 {
-  "name": "wp-temp",
+  "name": "Choolla",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Tobira <tobirawork@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --env development",
     "prod": "webpack --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobiraSoe/Choolla.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TobiraSoe/Choolla/issues"
   },
   "babel": {
     "presets": [
