@@ -1,5 +1,5 @@
 # My boilerplate "" for front-end development
----
+
 >In **src/** folder you have 3 main files with same name - App. *App.html* is your template, bundled *js* and *css* will import by own. *App.jsx* is main file(component), also i recomend you create a **src/components/** folder for comfortable work with components in your app.
 
 
@@ -14,7 +14,7 @@ A webpack boilerplate that includes the following things:
 
 
 ## Usege
-----
+
 ### Install dependencies
 
 ```
@@ -53,7 +53,7 @@ yarn
     ```
     yarn prod
     ```
-
+2. look at **public/** folder, where  can find app's files
 
 
 
